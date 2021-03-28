@@ -1,13 +1,15 @@
 package com.homeservice.homeservice.controller;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
-@RequestMapping("homeService")
-@CrossOrigin("*")
 public class HomeController {
 
+
+    @RequestMapping(name = "/", method = RequestMethod.GET, produces = "application/json")
+    public String getHome(){
+        return "WELCOME TO HOME PAGE";
+    }
 
     @GetMapping(name = "/getHello")
     public String getHello(){
